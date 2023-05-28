@@ -29,7 +29,7 @@ public class PointCP2
   /**
    * Constructs a coordinate object, with a type identifier.
    */
-  public PointCP(char type, double xOrRho, double yOrTheta)
+  public PointCP2(char type, double xOrRho, double yOrTheta)
   {
     if(type != 'C' && type != 'P')
       throw new IllegalArgumentException();
@@ -111,7 +111,7 @@ public class PointCP2
    * @param pointB The second point.
    * @return The distance between the two points.
    */
-  public double getDistance(PointCP pointB)
+  public double getDistance(PointCP2 pointB)
   {
     // Obtain differences in X and Y, sign is not important as these values
     // will be squared later.
@@ -129,13 +129,13 @@ public class PointCP2
    * @param rotation The number of degrees to rotate the point.
    * @return The rotated image of the original point.
    */
-  public PointCP rotatePoint(double rotation)
+  public PointCP2 rotatePoint(double rotation)
   {
     double radRotation = Math.toRadians(rotation);
     double X = getX();
     double Y = getY();
         
-    return new PointCP('C',
+    return new PointCP2('C',
       (Math.cos(radRotation) * X) - (Math.sin(radRotation) * Y),
       (Math.sin(radRotation) * X) + (Math.cos(radRotation) * Y));
   }
