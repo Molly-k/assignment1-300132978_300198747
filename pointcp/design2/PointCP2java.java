@@ -1,5 +1,8 @@
 public class PointCP2
 {
+
+  //store polar coordinates only
+
   //Instance variables ************************************************
 
   /**
@@ -95,12 +98,8 @@ public class PointCP2
   {
     if(typeCoord != 'C')
     {
-      //Calculate X and Y
-      double temp = getX();
-      yOrTheta = getY();
-      xOrRho = temp;
-   
-      typeCoord = 'C';	//Change coord type identifier
+      System.out.println("can only store polar coordinate");
+      return;
     }
   }
 
@@ -148,8 +147,6 @@ public class PointCP2
    */
   public String toString()
   {
-    return "Stored as " + (typeCoord == 'C' 
-       ? "Cartesian  (" + getX() + "," + getY() + ")"
-       : "Polar [" + getRho() + "," + getTheta() + "]") + "\n";
+    return "Stored as Polar [" + getRho() + "," + getTheta() + "]";
   }
 }
