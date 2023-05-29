@@ -1,11 +1,8 @@
-// This file contains material supporting section 2.9 of the textbook:
-// "Object Oriented Software Engineering" and is issued under the open-source
-// license found at http://www.site.uottawa.ca/school/research/lloseng/
 
 import java.io.*;
 
 
-public class PointCP2Test
+public class PointCP5Test
 {
   //Class methods *****************************************************
 
@@ -13,16 +10,16 @@ public class PointCP2Test
   public static void main(String[] args)
   {
     long start = System.currentTimeMillis();
-    PointCP2 point;
+    PointCP5 point;
 
     System.out.println("Cartesian-Polar Coordinates Conversion Program");
 
     // Check if the user input coordinates from the command line
-    // If he did, create the PointCP2 object from these arguments.
+    // If he did, create the PointCP5 object from these arguments.
     // If he did not, prompt the user for them.
     try
     {
-      point = new PointCP2(args[0].toUpperCase().charAt(0), 
+      point = new PointCP5(args[0].toUpperCase().charAt(0), 
         Double.valueOf(args[1]).doubleValue(), 
         Double.valueOf(args[2]).doubleValue());
     }
@@ -48,13 +45,12 @@ public class PointCP2Test
     System.out.println("\nAfter asking to store as Cartesian:\n" + point);
     point.convertStorageToPolar();
     System.out.println("\nAfter asking to store as Polar:\n" + point);
-    long finish = System.currentTimeMillis();
     long timeElapsed = finish - start;
     System.out.println("The time elapsed is : "+ timeElapsed +"ms");
   }
 
 
-  private static PointCP2 getInput() throws IOException
+  private static PointCP5 getInput() throws IOException
   {
     byte[] buffer = new byte[1024];  //Buffer to hold byte input
     boolean isOK = false;  // Flag set if input correct
@@ -131,7 +127,7 @@ public class PointCP2Test
       //Reset flag so while loop will prompt for other arguments
       isOK = false;
     }
-    //Return a new PointCP2 object
-    return (new PointCP2(coordType, a, b));
+    //Return a new PointCP5 object
+    return (new PointCP5(coordType, a, b));
   }
 }
